@@ -1,0 +1,18 @@
+apiVersion: admiral.io/v1alpha1
+kind: GlobalTrafficPolicy
+metadata:
+  name: gtp-service-prometheus
+  namespace: istio-system
+  annotations:
+    admiral.io/env: stage
+  labels:
+    identity: prometheus
+spec:
+  policy:
+    - dnsPrefix: default # default is a keyword, alternatively you can use `env` (ex: stage)
+      lbType: 1 #0 represents TOPOLOGY, 1 represents FAILOVER
+      target:
+        - region: westus
+          weight: 100
+        - region: ap-south-1
+          weight: 0

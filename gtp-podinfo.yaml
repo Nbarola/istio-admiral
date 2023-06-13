@@ -1,0 +1,18 @@
+apiVersion: admiral.io/v1alpha1
+kind: GlobalTrafficPolicy
+metadata:
+  name: gtp-service-podinfo
+  namespace: webapp-eks
+  annotations:
+    admiral.io/env: stage
+  labels:
+    identity: backend
+spec:
+  policy:
+    - dnsPrefix: default # default is a keyword, alternatively you can use `env` (ex: stage)
+      lbType: 1 #0 represents TOPOLOGY, 1 represents FAILOVER
+      target:
+        - region: ap-south-1
+          weight: 50
+        - region: westus
+          weight: 50
