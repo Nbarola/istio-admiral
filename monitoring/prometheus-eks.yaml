@@ -464,10 +464,6 @@ spec:
         release: prometheus
         chart: prometheus-15.9.0
         heritage: Helm
-        identity: prometheus
-        sidecar.istio.io/inject: "true"
-      annotations:
-        admiral.io/env: stage
         sidecar.istio.io/inject: "true"
     spec:
       enableServiceLinks: true
