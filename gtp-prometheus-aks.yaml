@@ -10,9 +10,9 @@ metadata:
 spec:
   policy:
     - dnsPrefix: default # default is a keyword, alternatively you can use `env` (ex: stage)
-      lbType: 1 #0 represents TOPOLOGY, 1 represents FAILOVER
-      target:
-        - region: westus
-          weight: 100
-        - region: ap-south-1
-          weight: 0
+      lbType: 0 #0 represents TOPOLOGY, 1 represents FAILOVER
+#      target:
+#        - region: westus
+#          weight: 100
+#        - region: ap-south-1
+#          weight: 0
