@@ -326,7 +326,7 @@ data:
           - '{job="kubernetes-pods"}'
       static_configs:
         - targets:
-          - 'stage.prometheus.global'
+          - 'aks.prometheus-aks.global'
           labels:
             cluster: 'aks-cluster'
     - job_name: 'federate-local'
@@ -464,6 +464,10 @@ spec:
         release: prometheus
         chart: prometheus-15.9.0
         heritage: Helm
+        identity: prometheus-eks
+        sidecar.istio.io/inject: "true"
+      annotations:
+        admiral.io/env: eks
         sidecar.istio.io/inject: "true"
     spec:
       enableServiceLinks: true

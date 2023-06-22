@@ -9,8 +9,8 @@ metadata:
     identity: backend
 spec:
   policy:
-    - dnsPrefix: default # default is a keyword, alternatively you can use `env` (ex: stage)
-      lbType: 1 #0 represents TOPOLOGY, 1 represents FAILOVER
+    - dnsPrefix: default
+      lbType: 1
       target:
         - region: ap-south-1
           weight: 50

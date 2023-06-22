@@ -4,10 +4,15 @@ metadata:
   name: gtp-service-prometheus
   namespace: istio-system
   annotations:
-    admiral.io/env: aks
+    admiral.io/env: eks
   labels:
-    identity: prometheus-aks
+    identity: prometheus-eks
 spec:
   policy:
     - dnsPrefix: default
-      lbType: 0
+      lbType: 1
+      target:
+        - region: westus
+          weight: 0
+        - region: ap-south-1
+          weight: 100
