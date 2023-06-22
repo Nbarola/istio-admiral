@@ -10,9 +10,4 @@ metadata:
 spec:
   policy:
     - dnsPrefix: default
-      lbType: 1
-      target:
-        - region: westus
-          weight: 0
-        - region: ap-south-1
-          weight: 100
+      lbType: 0
